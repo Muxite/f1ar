@@ -43,8 +43,14 @@ async def main():
             for point in location_data[:5]:
                 print(f"  Time: {point['time']}, X: {point['x']}, Y: {point['y']}, Z: {point['z']}")
             
-            print("\nPlotting path...")
+            print("\nPlotting 2D path...")
             client.debug_plot_path(location_data, driver_number=driver_number)
+            
+            print("\nPlotting 3D track (static)...")
+            client.plot_3d_track(location_data, driver_number=driver_number, animate=False)
+            
+            print("\nPlotting 3D track (animated - car driving along track)...")
+            client.plot_3d_track(location_data, driver_number=driver_number, animate=True, frame_skip=5)
         
         json_output = await client.get_time_and_location_json(
             driver_number=driver_number,

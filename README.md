@@ -1,4 +1,4 @@
-# shaurya7vs
+# shaurya7vs, Bonyoon Goo
 for NWHacks2026
 # F1 Augmented Reality Live Race Viewer
 
